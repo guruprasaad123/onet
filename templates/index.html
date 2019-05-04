@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+   @keyframes floating-nav {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(0.35em); }
+        100% { transform: translateY(0); }
+    }
+  </style>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='index.css') }}">  <title>Flask </title>
+</head>
+<body>
+  <section id="index"></section>
+   <script type="text/javascript" src="{{ url_for('static',filename='index.bundle.js') }}"></script>
+</html>

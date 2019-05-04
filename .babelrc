@@ -1,0 +1,25 @@
+{
+  "presets": 
+  [  
+    "@babel/react",
+    "@babel/preset-env"
+  ],
+  "plugins": 
+  [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-class-properties",
+    ["import",    { 
+      "libraryName": "antd", 
+      "style": (name: string, file: Object) => {
+        if(name === 'antd/lib/utils'){
+          return false;
+        }
+        return `${name}/style/2x`;
+      }
+    }] // `style: true` for less
+    ,
+    "@babel/plugin-syntax-dynamic-import",
+    "lodash"
+  ]
+}
