@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Row , Col , List ,Avatar, Typography , Skeleton ,Icon , Tabs }from 'antd';
+import {Row , Col , List ,Avatar, Typography , Skeleton ,Icon ,Modal, Tabs }from 'antd';
 import axios from 'axios';
 
 const TabPane = Tabs.TabPane;
@@ -76,7 +76,20 @@ class Dashboard extends Component<Props>{
       
 
     }
-
+    handleOk = (e:any) => {
+      console.log(e);
+      this.setState({
+        visible: false,
+      });
+    }
+  
+    handleCancel = (e:any) => {
+      console.log(e);
+      this.setState({
+        visible: false,
+      });
+    }
+  
 
 
     render()
@@ -169,7 +182,13 @@ source": {
     renderItem={(item:any) => (
       <List.Item
         key={item.report}
-        onClick={()=>{}}
+        onClick={()=>{
+          this.setState({
+            visible:true,
+            modalTitle:item.report,
+            modalUrl:item.url
+          });
+        }}
        // actions={[<IconText type="star-o" text="156" />, <IconText type="like-o" text="156" />, <IconText type="message" text="2" />]}
         extra={<iframe width={272}  src={item.url} />}
       >
@@ -189,7 +208,14 @@ source": {
     </TabPane>
   
   </Tabs>
-
+  <Modal
+          title={this.state.modalTitle}
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+        >
+     <iframe   src={this.state.modalUrl} ></iframe>
+        </Modal>
            </Col>
            </Row>
             </div>);
