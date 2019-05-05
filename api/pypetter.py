@@ -8,11 +8,13 @@ https://www.sec.gov/Archives/edgar/data/1305748/000101376208002443/form10q.htm
 
 http://www.rankandfiled.com/data/filer/1305748/filings
 
+http://www.rankandfiled.com/data/company/MXF/filings
+
 '''
 class pyppet():
     
     def __init__(self):
-        self.loop = asyncio.get_event_loop()
+        self.loop = None
     
     async def search_results(self,suggestion="alpha"):
         browser = await launch()
@@ -45,7 +47,10 @@ class pyppet():
 
 
     def get_suggestions(self,suggestion="alpha"):
-        return self.loop.run_until_complete(self.search_results(suggestion))
+        self.loop = asyncio.get_event_loop()
+        result = self.loop.run_until_complete(self.search_results(suggestion))
+        self.loop.close()
+        return result
 
 
 
@@ -67,8 +72,8 @@ async def main():
     await browser.close()
 
 
-pyp = pyppet()
-results = pyp.get_suggestions('AABB')
+#pyp = pyppet()
+#results = pyp.get_suggestions('AABB')
 
-print(results)
+#print(results)
 #asyncio.get_event_loop().run_until_complete(main())

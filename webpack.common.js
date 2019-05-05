@@ -14,7 +14,7 @@ function common(env)
           index:'./src/index.tsx'
         },
         output: {
-          filename: '[name].bundle.js',
+          filename: '[name].js',
           chunkFilename: '[name].bundle.js',
           path: path.resolve(__dirname, 'static')
         },
@@ -72,6 +72,10 @@ function common(env)
                 }
               }
             ]
+          },
+          {
+            test: /\.less$/,
+            loader: 'less-loader', // compiles Less to CSS
           },
           {
             test: /\.scss$/,

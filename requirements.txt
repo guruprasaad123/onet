@@ -2,3 +2,5 @@ httplib2==0.12.3
 Flash==1.0.0
 newsapi-python==0.2.3
 pypetter==0.0.25
+quart
+Quart-CORS

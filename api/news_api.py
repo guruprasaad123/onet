@@ -29,7 +29,7 @@ class newsapi():
         sources = self.newsapi.get_sources()
 
         return sources
-
+'''
 api = newsapi()
 
 q = 'Alphabet Inc'
@@ -41,3 +41,4 @@ results = api.everything(q)
 
 print((results['totalResults']))
 print(results)
+'''
