@@ -48,7 +48,7 @@ class Home extends Component<Props>{
         } 
 
 
-        return (<div className={"container"} style={{ background: '#ECECEC',height:'100vh'}}>
+        return (<div className={"container"} style={{ background: '#ECECEC',minHeight:'100vh'}}>
       
       {
           (view === 'Search')?( <Row type="flex" justify="center" align="middle" style={{height:'inherit'}}>

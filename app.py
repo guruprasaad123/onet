@@ -26,7 +26,7 @@ def async_action(f):
 
 #loop = asyncio.get_event_loop()
 app = Flask(__name__,)
-
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 pyp = pyppet()
 news_api =  newsapi()
 # Connect to database and create database session
@@ -71,6 +71,7 @@ def api():
 def showMain():
     #things = ["thing1", "thing2", "cat-in-the-hat"]
     print('hello')
+    
     #return redirect(url_for('static', filename='index.html'))
     #return app.send_static_file('index.html')
     return render_template('index.html')

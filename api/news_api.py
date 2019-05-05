@@ -18,8 +18,8 @@ class newsapi():
         all_articles = self.newsapi.get_everything(q=q,
                                     #  sources=sources,
                                     #  domains=domains,
-                                      from_param=from_param,
-                                      to=to,
+                                     # from_param=from_param,
+                                     # to=to,
                                       language=language,
                                       #sort_by=sort_by,
                                       page=page)
