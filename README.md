@@ -57,15 +57,33 @@
    python app.py
    ```
 
-
-
 ## Working
+
+## To make it Run :
+
+you'll need to run 2 terminals at the same time to
+
+1. To create `inder.js` bundler file which is essential for running the Web App.
+
+   ```
+   npm run build
+   ```
+
+   
+
+2. To run the `flask server` , to serve the files , responses.
+
+   ```
+   python app.py
+   ```
+
+# Behind the scenes
 
 ## Screen -1
 
 - We'll using `antd` design in our application ,
 
--  Starting with `formLayout.tsx` which gather the *companyName* and *TIckerName* from the user.
+- Starting with `formLayout.tsx` which gather the *companyName* and *TIckerName* from the user.
 
 - which is sent via `post` request via axios to the app.py api
 
@@ -80,7 +98,3 @@
 - which is switchable anyway
 
 - Onclicking the listItem on the *Quarterly reports* , modal will be shown with a `iframe` pointing the original page ( htttp://sev.gov.data ,  which seems to be not working because the security reasons ) 
-
-
-
-
