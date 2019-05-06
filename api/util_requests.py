@@ -17,7 +17,7 @@ def get_suggestions(q):
     if type(results) is list  and len(results) > 0 :
         (company,ID)=results[0].split('*')
         company = company.split('|')
-        company = (company[0],company[1])[len(company) >0]
+        company = (company[0],company[1])[len(company) >=1]
         ID=ID.split('#')[1]
         obj['company']=company
         obj['tickerID']=ID

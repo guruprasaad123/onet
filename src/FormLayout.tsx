@@ -11,7 +11,8 @@ import { FormComponentProps } from 'antd/lib/form';
   
   interface Props extends FormComponentProps {
       form:any,
-      switch:any
+      switch:any,
+      toggle:any
   }
 
   class FormLayout extends React.Component<Props> {

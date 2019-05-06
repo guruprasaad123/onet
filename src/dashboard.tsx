@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Row , Col , List ,Avatar, Typography , Skeleton ,Icon ,Modal, Tabs }from 'antd';
+import {Row , Col , List ,Avatar, Typography ,Button, Skeleton ,Icon ,Modal, Tabs }from 'antd';
 import axios from 'axios';
 
 const TabPane = Tabs.TabPane;
@@ -99,6 +99,10 @@ class Dashboard extends Component<Props>{
         const results: any= this.props.results;
         return (<div style={{background:'white'}}>
             <Row type="flex" justify="center" align="middle" style={{height:'inherit'}}>
+            <Typography.Title  type="secondary">
+            DashBoard
+            </Typography.Title>
+            <Button onClick={this.props.toggleView} type="primary"> Back to Home </Button>
            <Col span={20} >
            <Tabs defaultActiveKey="1" >
     <TabPane tab="News" key="1">
@@ -145,7 +149,7 @@ source": {
       pageSize: 3,
     }}
     dataSource={news.articles}
-    footer={<div><b>ant design</b> footer part</div>}
+    footer={<div><b>News</b> footer</div>}
     renderItem={(item:any) => (
       <List.Item
       key={item.title}
@@ -178,7 +182,7 @@ source": {
       pageSize: 3,
     }}
     dataSource={filings}
-    footer={<div><b>ant design</b> footer part</div>}
+    footer={<div><b>Quarterly Report</b> footer</div>}
     renderItem={(item:any) => (
       <List.Item
         key={item.report}

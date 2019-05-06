@@ -31,9 +31,25 @@ class Home extends Component<Props>{
 
     setDashBoardVal =( obj : any)=>{
         this.setState({
-            view:'Dashboard',
             ...obj
+        },
+        ()=>{
+            this.toggleView();
         })
+    }
+
+    toggleView = ()=>{
+       if( this.state.view==='Search')
+    {
+        this.setState({
+            view:'Dashboard'
+        });
+    }
+    else{
+        this.setState({
+            view:'Search'
+        });
+    }
     }
 
     render()
@@ -56,12 +72,13 @@ class Home extends Component<Props>{
            <Card style={{display:'flex',justifyContent:'center',alignItems:'center'}} bordered={false}>
             <Title > Ticker App </Title>
     
-    <FormLayout switch={this.setDashBoardVal}/>
+    <FormLayout toggle={this.toggleView} switch={this.setDashBoardVal}/>
     </Card>
      </Col>
     </Row>
-       ):(<Dashboard filings={filings} news={news} results={results}/>    )
-    }
+       ):(<Dashboard filings={filings} news={news} results={results} toggleView={this.toggleView}/>    )
+    } 
+
  </div>
         )
 }
